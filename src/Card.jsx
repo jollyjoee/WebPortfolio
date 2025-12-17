@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function Card({ title, className = "" }) {
+function Card({ className = "", children }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -26,7 +26,7 @@ function Card({ title, className = "" }) {
       ref={ref}
       className={`
         mx-auto my-auto flex h-80 min-w-64 flex-col items-center justify-center
-        bg-[#3b8ebe] p-4 rounded-xl shadow-2xl
+        bg-[#3b8ebe] px-4 py-50 rounded-xl shadow-2xl
         transition-all duration-700 ease-out
         ${className}
         ${visible
@@ -34,7 +34,7 @@ function Card({ title, className = "" }) {
           : "opacity-0 translate-y-8"}
       `}
     >
-      {title}
+      {children}
     </div>
   );
 }

@@ -10,6 +10,10 @@ body {
   font-family: "BBH Hegarty", sans-serif;
 }
 
+.font1 {
+  font-family: "Nunito", sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
