@@ -44,7 +44,7 @@ function ModrinthStats() {
             </li>
         ))}
         </ul>
-        <span className="text-rose-700 text-2xl font-extrabold">Total Downloads: </span>
+        <span className="text-rose-700 text-2xl font-extrabold"><a href="https://www.modrinth.com/user/JollyJoe" target="_blank">Total Downloads</a>: </span>
         <span className="text-rose-700 text-2xl font-extrabold">{totalDownloads}</span>
     </div>
   );
