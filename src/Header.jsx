@@ -2,9 +2,8 @@ import { useState } from "react";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setIsSelected] = useState(null);
-  const [hiddenLink, setHiddenLink] = useState(null);
-
+  const [selected, setIsSelected] = useState("Home");
+  const [isAnimating, setIsAnimating] = useState(false);
   // Menu links
   const links = [
     { name: "Home", href: "#hero" },
@@ -18,7 +17,13 @@ function Header() {
       <div className="flex justify-between items-center py-4 px-6 md:px-16">
         {/* Logo */}
         <h1 className="text-2xl font-bold tracking-widest">JP</h1>
-        <h2 className="uppercase font-extrabold text-2xl text-gray-300">{selected}</h2>
+        <h2
+          className={`uppercase font-extrabold text-2xl transition-all duration-300
+            ${isAnimating ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"}
+          `}
+        >
+          {selected}
+        </h2>
         {/* Desktop Menu */}
         <nav className="hidden md:flex gap-8 transition duration-75">
           {links.map((link) => (
@@ -26,14 +31,15 @@ function Header() {
               key={link.name}
               href={link.href}
               onClick={() => {
-                setIsSelected(link.name);
+                setIsAnimating(true);
                 setTimeout(() => {
-                  setHiddenLink(link.name)
-                }, 300);
+                  setIsAnimating(false);
+                  setIsSelected(link.name);
+                }, 200);
               }}
               className={`
                 transition duration-300 font-bold
-                ${selected === link.name ? "text-red-500" : "opacity-100 hover:text-blue-400"}
+                ${selected === link.name ? "text-blue-400" : "opacity-100 hover:text-blue-400"}
               `}
             >
               {link.name}
