@@ -83,8 +83,14 @@ function Header() {
             <a 
             key={link.name} 
             href={link.href} 
-            onClick={() => { setIsOpen(false); 
-              setIsSelected(link.name) }} 
+            onClick={() => {
+                setIsOpen(false);
+                setIsAnimating(true);
+                setTimeout(() => {
+                  setIsAnimating(false);
+                  setIsSelected(link.name);
+                }, 200);
+              }}
             className={`block px-4 py-2 rounded-lg hover:bg-gray-700 transition-all duration-100 transform font-bold
               ${ isOpen ? `translate-y-0 opacity-100 delay-${index * 75}` : "translate-y-2 opacity-0" } 
               ${ selected === link.name ? "hidden" : ""}
