@@ -24,7 +24,7 @@ function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto rounded-xl shadow-2xl z-50 transition duration-575 ${scrolled ? "bg-black/30 scale-[1.1]" : "bg-black/90"}`}>
+    <header className={`fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto shadow-2xl z-50 transition-all duration-575 ${scrolled ? "bg-black/30 scale-[1.1] rounded-b-4xl" : "bg-black/90 rounded-xl"}`}>
       <div className="flex justify-between items-center py-4 px-6 md:px-16">
         {/* Logo */}
         <h1 className="text-2xl font-bold tracking-widest">JP</h1>
