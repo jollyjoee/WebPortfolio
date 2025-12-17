@@ -5,23 +5,12 @@ import Card from './Card.jsx'
 import Hero from './Hero.jsx'
 
 function App() {
-  const [pageLoc, setPageLoc] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setPageLoc(window.scrollY);
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-
   return (
-    <div>
+    <div className="min-h-screen bg-linear-to-b from-gray-900 to-black">
       <Header />
-      <main className='pt-28 px-10 pb-5'>
-        <Hero />
+      <main className='pt-28 px-10 md:px-60 pb-5'>
+        <div id="hero"><Hero /></div>
+        <div id="projects" className="h-20 w-full" />
         <div>
           <Card title="Ulticlick" className="grow" />
           <Card title="MinMacro" className="grow mt-5" />

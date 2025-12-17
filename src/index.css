@@ -4,5 +4,12 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: white;
-  background-color: #2b2b2b;
+}
+
+.font2 {
+  font-family: "BBH Hegarty", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }

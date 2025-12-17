@@ -18,12 +18,34 @@ function Header() {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
     }
-      
     
-
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2 - 80; // adjust for header
+
+      for (let link of links) {
+        const id = link.href.replace("#", ""); // get section ID
+        const section = document.getElementById(id);
+        if (section) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < bottom) {
+            setIsSelected(link.name); // use link.name directly
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // initial selection on load
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [links]);
 
 
   return (
