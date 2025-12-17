@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setIsSelected] = useState("Home");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
   // Menu links
   const links = [
     { name: "Home", href: "#hero" },
@@ -12,8 +14,17 @@ function Header() {
     { name: "Contact", href: "#contact" },
   ];
 
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto bg-black/90 rounded-xl shadow-2xl z-50">
+    <header className={`fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto rounded-xl shadow-2xl z-50 transition duration-575 ${scrolled ? "bg-black/30 scale-[1.1]" : "bg-black/90"}`}>
       <div className="flex justify-between items-center py-4 px-6 md:px-16">
         {/* Logo */}
         <h1 className="text-2xl font-bold tracking-widest">JP</h1>

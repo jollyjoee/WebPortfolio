@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className='pt-28 px-10 pb-5'>
+      <main className='pt-28 px-10 pb-5'>
         <div>
           <Card title="Ulticlick" className="grow min-h-120" />
           <Card title="MinMacro" className="grow mt-5 min-h-120" />
@@ -15,7 +15,7 @@ function App() {
           <Card title="FiveM Scripts" className="grow" />
           <Card title="Foodify" className="grow" />
         </div>
-      </div>
+      </main>
     </div>
   );
 }
