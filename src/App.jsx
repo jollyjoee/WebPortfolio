@@ -15,17 +15,12 @@ function App() {
           <Card title="MinMacro" className="grow mt-5" />
 
           <div className="flex gap-5 flex-wrap mt-5">
-            <Card title="Modrinth projects" className="grow" />
+            <Card title="Modrinth projects" className="grow">
+              <ModrinthStats />
+            </Card>
             <Card title="FiveM Scripts" className="grow" />
             <Card title="Foodify" className="grow" />
           </div>
-        </div>
-        <div className='flex gap-5 md:gap-5 flex-wrap mt-5'>
-          <Card title="Modrinth projects" className="grow">
-            <ModrinthStats />
-          </Card>
-          <Card title="FiveM Scripts" className="grow" />
-          <Card title="Foodify" className="grow" />
         </div>
       </main>
     </div>
