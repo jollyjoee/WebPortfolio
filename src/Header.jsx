@@ -17,17 +17,20 @@ function Header() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-    };
+    }
+      
+    
 
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+
   return (
-    <header className={`fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto shadow-2xl z-50 transition-all duration-575 ${scrolled ? "bg-black/30 scale-[1.04] md:scale-[1.1] rounded-b-4xl" : "bg-black/90 rounded-xl"}`}>
+    <header className={`fixed top-2 left-4 right-4 inset-x-0 max-w-auto md:max-w-4xl mx-auto w-auto shadow-2xl z-50 transition-all duration-575 ${scrolled ? "bg-black/30 scale-[1.04] md:max-w-2 md:scale-[1.04] rounded-b-2xl" : "bg-black/90 rounded-xl"}`}>
       <div className="flex justify-between items-center py-4 px-6 md:px-16">
         {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-widest">JP</h1>
+        <h1 className={`text-2xl font-bold tracking-widest transition-all duration-300`}>JP</h1>
         <h2
           className={`uppercase font-extrabold text-2xl transition-all duration-300
             ${isAnimating ? "opacity-0 translate-y-1" : "opacity-100 translate-y-0"}
