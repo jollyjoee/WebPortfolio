@@ -25,8 +25,8 @@ function Card({ className = "", children }) {
     <div
       ref={ref}
       className={`
-        mx-auto my-auto flex h-80 min-w-64 flex-col items-center justify-center
-        bg-[#3b8ebe] px-4 py-50 rounded-xl shadow-2xl
+        mx-auto flex min-h-80 min-w-64 items-stretch flex-wrap
+        bg-neutral-900 p-4 rounded-xl shadow-2xl
         transition-all duration-700 ease-out
         ${className}
         ${visible

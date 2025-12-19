@@ -35,17 +35,26 @@ function ModrinthStats() {
   if (loading) return <div>Loading…</div>;
 
   return (
-    <div>
+    <div className="w-max">
         <ul>
         {projects.map((p) => (
-            <li key={p.name}>
-                <span className="text-lg font-bold"><a href={p.link} target="_blank">{p.name}</a>: </span>
-                <span className="font-normal">{p.downloads.toLocaleString()} Downloads</span>
+            <li key={p.name} className="text-left align-middle w-full">
+                <span className="text-lg font-bold"><a href={p.link} target="_blank" className="
+                    inline-block text-lg font-bold relative 
+                    after:absolute after:left-0 after:-bottom-[0.1px] 
+                    after:h-0.5 after:w-0 after:bg-current after:transition-all 
+                    after:duration-200 hover:after:w-full"
+                >{p.name}</a>:</span>
+                <span className="font-normal"> {p.downloads.toLocaleString()} Downloads</span>
             </li>
         ))}
-        </ul>
-        <span className="text-rose-700 text-2xl font-extrabold"><a href="https://www.modrinth.com/user/JollyJoe" target="_blank">Total Downloads</a>: </span>
+        <span className="text-rose-700 text-2xl font-extrabold"><a href="https://www.modrinth.com/user/JollyJoe" target="_blank" className="
+                    inline-block relative 
+                    after:absolute after:left-0 after:-bottom-[0.1px] 
+                    after:h-0.5 after:w-0 after:bg-current after:transition-all   
+                    after:duration-200 hover:after:w-full">Total Downloads</a>: </span>
         <span className="text-rose-700 text-2xl font-extrabold">{totalDownloads}</span>
+        </ul>
     </div>
   );
 }
