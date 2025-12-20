@@ -60,7 +60,7 @@ function App() {
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
           blend={0.8}
           amplitude={1.0}
-          speed={0.5}
+          speed={0.5} // Slower = less CPU
         />
       </div>
       <Header />
@@ -68,23 +68,25 @@ function App() {
         <div id="hero"><Hero /></div>
         <div id="projects" className="h-20 w-full" />
         <div>
-          <Card title="Ulticlick" className="grow gap-5">
-            <div className='relative bg-neutral-900 min-w-54 flex-1 h-120 p-5 pb-0 rounded-xl 
+          <Card title="Ulticlick" className="grow gap-5 max-w-fit">
+            <div className='flex flex-col w-full gap-2'>
+              <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-[10px] pt-2 text-wrap'>JAVA AUTOMATION SOFTWARE</div>
+              <div className='md:text-2xl text-sm font-bold w-full text-center tracking-[5px]'>with Cloudflare Auth</div>
+            </div>
+            <div className='relative bg-neutral-900 min-w-54 grow h-70 p-5 pb-0 rounded-xl mx-auto
             after:absolute after:inset-0 after:shadow-[inset_0_-40px_100px_rgba(0,0,0,0.95)] 
             after:pointer-events-none after:z-10 after:rounded-xl'>
               <div className='relative w-full h-full overflow-hidden rounded-lg'>
                 <img 
                   src={Ucapi} 
-                  className="absolute left-0 w-auto h-auto object-cover cursor-pointer transition-transform duration-300 hover:scale-102 hover:translate-y-15" 
+                  className="absolute left-0 w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-102"
+                  style={{ transform: 'translateZ(0)', willChange: 'transform' }}
                   onClick={() => handleImageClick(Ucapi)}
+                  loading="eager"
                 />
               </div>
             </div>
-            <div className='flex flex-col h-full flex-1 w-full'>
-              <div className='text-4xl font2 w-full text-center tracking-wider py-2'>Java Software with Cloudflare Auth</div>
-              <div className='max-w-lg w-full h-fit mx-auto px-15'><InfiniteScroll items={ucStack} /></div>
-              <div className='text-xl w-full p-5'>Rest API via Cloudflare worker</div>
-            </div>
+            <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack} /></div>
           </Card>
           <Card title="MinMacro" className="grow mt-5" />
           <div className="flex gap-5 flex-wrap mt-5 items-stretch">

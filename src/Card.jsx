@@ -26,7 +26,7 @@ function Card({ className = "", children }) {
       ref={ref}
       className={`
         mx-auto flex min-h-80 min-w-64 items-stretch flex-wrap
-        bg-neutral-900 p-4 rounded-xl shadow-2xl
+        bg-neutral-900 p-4 rounded-xl shadow-[inset_0px_0px_72px_-9px_rgba(0,_0,_0,_0.44)]
         transition-all duration-700 ease-out
         ${className}
         ${visible

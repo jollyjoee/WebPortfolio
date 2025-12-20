@@ -17,3 +17,17 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+.text-outline {
+    -webkit-text-stroke: 1px rgb(255, 255, 255); /* Adjust width and color as needed */
+    -webkit-text-fill-color: transparent; /* Makes the inner text transparent */
+    /* Standard property for non-webkit browsers (less support) */
+    text-stroke: 1px rgb(255, 255, 255);
+    text-fill-color: transparent; 
+  }
+  /* Example of a thicker outline class */
+.text-outline-2 {
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+  -webkit-text-fill-color: transparent;
+}

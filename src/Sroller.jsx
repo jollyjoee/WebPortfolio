@@ -33,7 +33,7 @@ function InfiniteScroll({ items }) {
 
   return (
     <div className="w-full rounded-2xl">
-      <div ref={scrollRef}className="overflow-hidden flex gap-6 h-10" style={{ scrollBehavior: 'auto' }}>
+      <div ref={scrollRef}className="overflow-hidden flex gap-6 md:gap-18 h-10" style={{ scrollBehavior: 'auto' }}>
         {/* Render items THREE times for seamless loop */}
         {[...items, ...items, ...items].map((item, idx) => (
           <div
