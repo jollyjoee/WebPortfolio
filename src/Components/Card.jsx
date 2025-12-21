@@ -28,7 +28,7 @@ function Card({ className = "", children }) {
         className={`
           z-100
           mx-auto flex min-h-80 h-full min-w-64 items-stretch flex-wrap
-          bg-neutral-800/50 rounded-xl shadow-[inset_0px_0px_77px_11px_#080808]
+          bg-neutral-800/50 rounded-xl
           transition-all duration-700 ease-out
           ${visible
             ? "opacity-100 translate-y-0"

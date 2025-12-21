@@ -3,6 +3,7 @@ import Mugshot from '../assets/mugshot.png'
 
 function About() {
     const [visible, setVisible] = useState(false);
+    const [emailText, setEmailText] = useState(true)
     const ref = useRef(null)
 
     useEffect(() => {
@@ -32,7 +33,7 @@ function About() {
         { name: "Python", level: 60 },
         { name: "AutoHotKey", level: 95 },
         { name: "Lua", level: 75 },
-        { name: "Cloudflare Tools", level: 70 },
+        { name: "Cloudflare Tools", level: 65 },
     ];
 
     const sorted = [...skills].sort((a, b) =>  b.level - a.level)
@@ -51,23 +52,21 @@ function About() {
             ${visible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-8"}`}>
-            {/* Header */}
-            <div className='text-5xl font-extrabold text-center tracking-wider font2'>ABOUT ME</div>
             
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Column - Profile & Bio */}
                 <div className="flex flex-col gap-6">
                     {/* Profile Card */}
-                    <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col items-center gap-6 grow">
-                        <div className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-purple-500/30">
+                    <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col items-center gap-6 grow justify-between">
+                        <div className="rounded-full overflow-hidden ring-4 ring-purple-500/30">
                             <img 
                                 src={Mugshot} 
                                 alt="Profile" 
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <div className="grow flex flex-col gap-1 text-center justify-center">
+                        <div className="flex flex-col gap-1 text-center justify-end">
                             <h2 className="text-3xl font-bold">{info.name}</h2>
                             <p className="text-xl text-purple-400">{info.title}</p>
                         </div>
@@ -83,22 +82,23 @@ function About() {
                             <a 
                                 href={`mailto:${info.email}`}
                                 onClick={(e) => {
+                                    setEmailText(false)
                                     setTimeout(() => {
+                                        setEmailText(true)
+                                    }, 1300)
                                     if (document.activeElement === e.target) {
                                         navigator.clipboard.writeText(info.email);
-                                        alert('Email copied to clipboard!');
                                     }
-                                    }, 100);
                                 }}
-                                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors"
+                                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition duration-150"
                             >
-                                Email Me
+                                { emailText ? 'Email' : 'Email copied to clipboard!'}
                             </a>
                             <a 
                                 href={info.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors"
+                                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150"
                             >
                                 GitHub
                             </a>

@@ -11,7 +11,7 @@ function Header() {
     { name: "Home", href: "#hero" },
     { name: "Projects", href: "#projects" },
     { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    //{ name: "Contact", href: "#contact" },
   ];
 
   // Navbar layout shift when scrolled

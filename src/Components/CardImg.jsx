@@ -1,7 +1,7 @@
 function CardImg({ src, onClick }) {  // ← Add onClick to props
     return (
-        <div className='relative bg-neutral-900 min-w-54 grow h-70 p-5 pb-0 mb-3 rounded-xl mx-auto
-              after:absolute after:inset-0 after:shadow-[inset_0_-40px_100px_rgba(0,0,0,0.95)] 
+        <div className='relative bg-neutral-900/30 min-w-54 grow h-70 p-5 pb-0 mb-3 rounded-xl mx-auto
+              after:absolute after:inset-0 after:shadow-[inset_0_-40px_100px_rgba(0,0,0,0.45)] 
               after:pointer-events-none after:z-10 after:rounded-xl'>
             <div className='relative w-full h-full overflow-hidden rounded-lg'>
                 <img 
