@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 
 import Header from './Header.jsx';
 import Card from './Components/Card.jsx'
-import Hero from './Components/Hero.jsx'
 import ModrinthStats from './ModrinthStats.jsx'
 import CardImg from './Components/CardImg.jsx'
 import InfiniteScroll from './Components/Scroller.jsx';
+
+import Hero from './Pages/Hero.jsx'
+import About from './Pages/About.jsx'
 
 import Ulticlick from './assets/ulticlick.png'
 import Ucapi from './assets/ucapi.png'
@@ -124,6 +126,7 @@ function App() {
       <Header />
       <main className='pt-28 px-10 md:px-60 pb-5'>
         <span id="hero"><Hero /></span>
+
         <div id="projects" className="h-20 w-full" />
           <Card title="Ulticlick" className="grow">
             <div className="w-full h-full p-5">
@@ -151,13 +154,24 @@ function App() {
               <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div>
             </div>
           </Card>
+  
           <div className="flex gap-5 flex-wrap mt-5 items-stretch">
             <Card title="Modrinth projects" className="grow">
-              <div className='z-100'><ModrinthStats /></div>
+              <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
+                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-[10px] pt-2 text-wrap z-100'><a href="https://www.modrinth.com/user/JollyJoe" target="_blank" className="
+                    inline-block relative 
+                    after:absolute after:left-0 after:-bottom-1
+                    after:h-0.5 after:w-0 after:bg-current after:transition-all   
+                    after:duration-200 hover:after:w-full">Modrinth Plugin Developer</a></div>
+                <ModrinthStats />
+                <Card title="Modrinth Sub" className='grow w-full'></Card>
+              </div>
             </Card>
-            <Card title="FiveM Scripts" className="grow" />
-            <Card title="Foodify" className="grow" />
+            <Card title="FiveM Scripts" className='grow'/>
+            <Card title="Foodify" className='grow'/>
           </div>
+          <div className='h-20 w-full flex items-center justify-center' id="about"></div>
+          <About />
       </main>
 
       {/* Fullscreen Overlay */}

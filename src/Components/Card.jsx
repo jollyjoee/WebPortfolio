@@ -27,8 +27,8 @@ function Card({ className = "", children }) {
       <div
         className={`
           z-100
-          mx-auto flex min-h-80 min-w-64 items-stretch flex-wrap
-          bg-neutral-900 rounded-xl
+          mx-auto flex min-h-80 h-full min-w-64 items-stretch flex-wrap
+          bg-neutral-900 rounded-xl shadow-[inset_0px_0px_77px_21px_#080808]
           transition-all duration-700 ease-out
           ${visible
             ? "opacity-100 translate-y-0"
