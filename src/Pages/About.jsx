@@ -31,7 +31,11 @@ function About() {
         { name: "API Integration", level: 80 },
         { name: "Python", level: 60 },
         { name: "AutoHotKey", level: 95 },
+        { name: "Lua", level: 75 },
+        { name: "Cloudflare Tools", level: 70 },
     ];
+
+    const sorted = [...skills].sort((a, b) =>  b.level - a.level)
 
     const info = {
         name: "Julijo Pisk Jr.",
@@ -55,15 +59,15 @@ function About() {
                 {/* Left Column - Profile & Bio */}
                 <div className="flex flex-col gap-6">
                     {/* Profile Card */}
-                    <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col items-center gap-6">
-                        <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-purple-500/30">
+                    <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col items-center gap-6 grow">
+                        <div className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-purple-500/30">
                             <img 
                                 src={Mugshot} 
                                 alt="Profile" 
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <div className="flex flex-col gap-1 text-center">
+                        <div className="grow flex flex-col gap-1 text-center justify-center">
                             <h2 className="text-3xl font-bold">{info.name}</h2>
                             <p className="text-xl text-purple-400">{info.title}</p>
                         </div>
@@ -103,11 +107,11 @@ function About() {
                 </div>
 
                 {/* Skills */}
-                <div className="bg-neutral-800/50 rounded-2xl p-6">
+                <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col">
                     <h3 className="text-2xl font-bold mb-6">Skills</h3>
-                    <div className="space-y-4">
-                        {skills.map((skill) => (
-                            <div key={skill.name}>
+                    <div className="grow flex flex-col justify-between">
+                        {sorted.map((skill) => (
+                            <div key={skill.name} className="mb-4">
                                 <div className="flex justify-between mb-4">
                                     <span className="font-semibold">{skill.name}</span>
                                     <span className="text-gray-400">{skill.level}%</span>
