@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Picture from './assets/vite.svg';
+import Picture from '../assets/vite.svg';
 
 function Hero() {
   const ref = useRef(null);
@@ -29,9 +29,9 @@ function Hero() {
                 ${visible ? "opacity-100 scale-100" : "rotate-300 scale-0 opacity-0"}
             `}
             >
-                <span className="w-full text-center text-6xl font2 ">Hi there!</span>
-                <span className="w-full text-center text-xl my-5 font2">Di ko pa alam ilalagay ko dito</span>
-                <img src={Picture} className={`w-35 h-35 text-center text-xl mx-auto rounded-[200px] mb-5 transition duration-300`}/>
+                <span className="w-full text-center text-6xl font2 tracking-wider">Crafting Code, Designing Solutions</span>
+                <img src={Picture} className={`w-35 h-35 text-center text-xl mx-auto rounded-[200px] my-5 transition duration-300`}/>
+                <span className="w-full text-center text-xl font2 tracking-wider">Hi I'm Julijo Pisk</span>
             </div>
         </div>
     )

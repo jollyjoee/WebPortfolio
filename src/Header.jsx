@@ -14,6 +14,7 @@ function Header() {
     { name: "Contact", href: "#contact" },
   ];
 
+  // Navbar layout shift when scrolled
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);

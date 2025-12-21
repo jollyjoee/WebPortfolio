@@ -38,7 +38,7 @@ function InfiniteScroll({ items }) {
         {[...items, ...items, ...items].map((item, idx) => (
           <div
             key={`${item.id}-${idx}`}
-            className="h-full flex items-center justify-center text-white text-lg font-bold shrink-0 gap-3 whitespace-nowrap"
+            className="h-full flex items-center justify-center text-white text-lg font-bold shrink-0 gap-3 whitespace-nowrap z-100"
           >
             <img src={item.iconPath} alt={item.text} className="w-6 h-6" />
             {item.text}

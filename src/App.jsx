@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react';
+
 import Header from './Header.jsx';
-import Card from './Card.jsx'
-import Hero from './Hero.jsx'
+import Card from './Components/Card.jsx'
+import Hero from './Components/Hero.jsx'
 import ModrinthStats from './ModrinthStats.jsx'
+import CardImg from './Components/CardImg.jsx'
+import InfiniteScroll from './Components/Scroller.jsx';
+
 import Ulticlick from './assets/ulticlick.png'
 import Ucapi from './assets/ucapi.png'
-import InfiniteScroll from './Sroller.jsx';
 import Cloudflare from './assets/cloudflare-icon.svg'
-import Aurora from './Aurora.jsx'
+import CSSIcon from './assets/css-3.svg'
+import MMLogin from './assets/minmacrologin.png'
+import MMHome from './assets/minmacrohome.png'
+
+import Aurora from './Background/Aurora.jsx'
 
 
 function App() {
@@ -34,6 +41,49 @@ function App() {
       id: 4,
       text: 'Cloudflare',
       iconPath: Cloudflare
+    },
+    {
+      id: 5,
+      text: 'HTML5',
+      iconPath: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+    },
+    {
+      id: 6,
+      text: 'CSS',
+      iconPath: CSSIcon,
+    }
+  ];
+
+  const mmStack = [
+    { 
+      id: 1, 
+      text: 'MySQL', 
+      iconPath: 'https://www.svgrepo.com/show/303251/mysql-logo.svg'
+    },
+    { 
+      id: 2, 
+      text: 'JavaScript', 
+      iconPath: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+    },
+    {
+      id: 3,
+      text: 'AutoHotKey',
+      iconPath: 'https://raw.githubusercontent.com/AutoHotkey/AutoHotkey/a34bc07d357b7299ca229757162cef8a91e37f52/source/resources/icons.svg'
+    },
+    {
+      id: 4,
+      text: 'HTML5',
+      iconPath: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+    },
+    {
+      id: 5,
+      text: 'CSS',
+      iconPath: CSSIcon,
+    },
+    {
+      id: 6,
+      text: 'Python',
+      iconPath: 'https://www.svgrepo.com/show/452091/python.svg',
     }
   ];
 
@@ -44,9 +94,15 @@ function App() {
     
     if (showOverlay) {
       window.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden' 
+    } else {
+      document.body.style.overflow = 'unset'
     }
     
-    return () => window.removeEventListener('keydown', handleEscape)
+    return () => {
+      window.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
   }, [showOverlay])
 
   const handleImageClick = (image) => {
@@ -56,51 +112,52 @@ function App() {
   
 
   return (
-    <div className="min-h-screen min-w-full bg-linear-to-b from-gray-900 to-black">
+    <div className="min-h-screen min-w-full bg-linear-to-b from-gray-900 to-black" /*onContextMenu={(e) => e.preventDefault()}*/>
       <div className='fixed min-w-screen h-100'>
         <Aurora
           colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
           blend={0.8}
           amplitude={1.0}
-          speed={0.5} // Slower = less CPU
+          speed={0.5} 
         />
       </div>
       <Header />
       <main className='pt-28 px-10 md:px-60 pb-5'>
-        <div id="hero"><Hero /></div>
+        <span id="hero"><Hero /></span>
         <div id="projects" className="h-20 w-full" />
-        <div>
-          <Card title="Ulticlick" className="grow max-w-fit">
+          <Card title="Ulticlick" className="grow">
             <div className="w-full h-full p-5">
               <div className='flex flex-col w-full gap-2 pb-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-[10px] pt-2 text-wrap'>JAVA AUTOMATION SOFTWARE</div>
-                <div className='md:text-2xl text-sm font-bold w-full text-center tracking-[5px]'>with Cloudflare Auth</div>
+                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-[10px] pt-2 text-wrap z-100'>JAVA AUTOMATION SOFTWARE</div>
+                <div className='md:text-2xl text-sm font-bold w-full text-center tracking-[5px] z-100'>with Cloudflare Auth</div>
               </div>
-              <div className='relative bg-neutral-900 min-w-54 grow h-70 p-5 pb-0 mb-3 rounded-xl mx-auto
-              after:absolute after:inset-0 after:shadow-[inset_0_-40px_100px_rgba(0,0,0,0.95)] 
-              after:pointer-events-none after:z-10 after:rounded-xl'>
-                <div className='relative w-full h-full overflow-hidden rounded-lg'>
-                  <img 
-                    src={Ucapi} 
-                    className="absolute left-0 w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-102"
-                    style={{ transform: 'translateZ(0)', willChange: 'transform' }}
-                    onClick={() => handleImageClick(Ucapi)}
-                    loading="eager"
-                  />
-                </div>
+              <div className='flex gap-5 flex-wrap'> 
+                <CardImg src={Ucapi} onClick={() => handleImageClick(Ucapi)} />
+                <CardImg src={Ulticlick} onClick={() => handleImageClick(Ulticlick)} />
               </div>
               <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack} /></div>
             </div>
           </Card>
-          <Card title="MinMacro" className="grow mt-5" />
+          <Card title="MinMacro" className="grow mt-5">
+            <div className="w-full h-full p-5">
+              <div className='flex flex-col w-full gap-2 pb-3'>
+                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-[10px] pt-2 text-wrap z-100'>LOW-LEVEL GAME AUTOMATION</div>
+                <div className='md:text-2xl text-sm font-bold w-full text-center tracking-[5px] z-100'>with remote MySQL Integration</div>
+              </div>
+              <div className='flex gap-5 flex-wrap'> 
+                <CardImg src={MMLogin} onClick={() => handleImageClick(MMLogin)} />
+                <CardImg src={MMHome} onClick={() => handleImageClick(MMHome)} />
+              </div>
+              <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div>
+            </div>
+          </Card>
           <div className="flex gap-5 flex-wrap mt-5 items-stretch">
             <Card title="Modrinth projects" className="grow">
-              <ModrinthStats />
+              <div className='z-100'><ModrinthStats /></div>
             </Card>
             <Card title="FiveM Scripts" className="grow" />
             <Card title="Foodify" className="grow" />
           </div>
-        </div>
       </main>
 
       {/* Fullscreen Overlay */}
