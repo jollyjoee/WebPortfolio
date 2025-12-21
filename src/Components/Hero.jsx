@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Picture from '../assets/vite.svg';
+import Picture from '../assets/react.svg';
 
 function Hero() {
   const ref = useRef(null);
@@ -25,7 +25,7 @@ function Hero() {
     return (
         <div ref={ref}>
             <div
-            className={`w-full min-h-170 mx-auto flex flex-col py-10 mb-10 transition-all duration-700 justify-center
+            className={`w-full min-h-120 mx-auto flex flex-col mb-10 mt-20 transition-all duration-700 justify-center
                 ${visible ? "opacity-100 scale-100" : "rotate-300 scale-0 opacity-0"}
             `}
             >

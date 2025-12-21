@@ -1,4 +1,3 @@
-
 export function parseProjectsForDownloads(data) {
   if (!Array.isArray(data)) {
     return [];

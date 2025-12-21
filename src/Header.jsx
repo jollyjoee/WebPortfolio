@@ -66,7 +66,12 @@ function Header() {
             <a
               key={link.name}
               href={link.href}
-              onClick={() => {
+              onClick={(e) => {
+                if (link.name === "Home") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }
+
                 setIsAnimating(true);
                 setTimeout(() => {
                   setIsAnimating(false);
