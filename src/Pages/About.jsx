@@ -35,7 +35,7 @@ function About() {
 
     const info = {
         name: "Julijo Pisk Jr.",
-        title: "Full Stack and Game Experience Developer / Automation Specialist",
+        title: "Full Stack Developer || Game Experience Developer || Automation Specialist",
         location: "Lumil, Silang, Cavite, Philippines",
         bio: "Passionate developer specializing in building modern web applications. I create efficient, user-friendly solutions with clean code and great attention to detail.",
         email: "piskjulijo@gmail.com",
@@ -102,40 +102,36 @@ function About() {
                     </div>
                 </div>
 
-                {/* Right Column - Skills & Map */}
-                <div className="flex flex-col gap-6">
-                    {/* Skills */}
-                    <div className="bg-neutral-800/50 rounded-2xl p-6">
-                        <h3 className="text-2xl font-bold mb-6">Skills</h3>
-                        <div className="space-y-4">
-                            {skills.map((skill) => (
-                                <div key={skill.name}>
-                                    <div className="flex justify-between mb-2">
-                                        <span className="font-semibold">{skill.name}</span>
-                                        <span className="text-gray-400">{skill.level}%</span>
-                                    </div>
-                                    <div className="w-full bg-neutral-700 rounded-full h-2.5">
-                                        <div 
-                                            className="bg-linear-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
-                                            style={{ width: `${skill.level}%` }}
-                                        />
-                                    </div>
+                {/* Skills */}
+                <div className="bg-neutral-800/50 rounded-2xl p-6">
+                    <h3 className="text-2xl font-bold mb-6">Skills</h3>
+                    <div className="space-y-4">
+                        {skills.map((skill) => (
+                            <div key={skill.name}>
+                                <div className="flex justify-between mb-4">
+                                    <span className="font-semibold">{skill.name}</span>
+                                    <span className="text-gray-400">{skill.level}%</span>
                                 </div>
-                            ))}
-                        </div>
+                                <div className="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div 
+                                        className="bg-linear-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
+                                        style={{ width: `${skill.level}%` }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
-                    {/* Map */}
-                    <div className="bg-neutral-800/50 rounded-2xl p-6 flex-1 min-h-fit">
-                        <h3 className="text-2xl font-bold mb-2">Location</h3>
-                        <p className="text-sm text-gray-400 mb-2">📍 {info.location}</p>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9200.138580174866!2d121.00639212433775!3d14.184129184695344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7bea47823f65%3A0x7de76e34763f2e1b!2sLumil%2C%20Silang%2C%20Cavite!5e0!3m2!1sen!2sph!4v1766340359082!5m2!1sen!2sph"
-                            loading="lazy"
-                            className='w-full min-h-75 rounded-xl'
-                        />
-                    </div>
-                </div>
+                </div>      
+            </div>
+            {/* Map */}
+            <div className="bg-neutral-800/50 rounded-2xl p-6 min-h-fit w-full">
+                <h3 className="text-2xl font-bold mb-2">Location</h3>
+                <p className="text-sm text-gray-400 mb-2">📍 {info.location}</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9200.138580174866!2d121.00639212433775!3d14.184129184695344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7bea47823f65%3A0x7de76e34763f2e1b!2sLumil%2C%20Silang%2C%20Cavite!5e0!3m2!1sen!2sph!4v1766340359082!5m2!1sen!2sph"
+                    loading="lazy"
+                    className='w-full min-h-75 rounded-xl'
+                />
             </div>
         </div>
     )
