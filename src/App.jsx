@@ -171,7 +171,7 @@ function App() {
             <Card title="Foodify" className='grow'/>
           </div>
           <div className='h-20 w-full flex items-center justify-center' id="about"></div>
-          <About />
+          <div className='relative'><About /></div>
       </main>
 
       {/* Fullscreen Overlay */}
