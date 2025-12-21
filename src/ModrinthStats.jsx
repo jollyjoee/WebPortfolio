@@ -70,8 +70,8 @@ function ModrinthStats() {
 
   return (
     <>
-      <div className="relative flex z-50 gap-2">
-        <div className="md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100 flex items-center" ref={buttonRef}>Total Downloads: <span>{totalDownloads}</span></div>
+      <div className="relative flex z-50 gap-2" ref={buttonRef}>
+        <div className="md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100 flex gap-2 items-center" >Total Downloads:<span>{totalDownloads}</span></div>
         <div>
           <button
             onClick={() => setIsOpen(!isOpen)}
