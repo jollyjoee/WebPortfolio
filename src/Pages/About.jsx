@@ -35,7 +35,7 @@ function About() {
 
     const info = {
         name: "Julijo Pisk Jr.",
-        title: "Full Stack Developer || Game Experience Developer || Automation Specialist",
+        title: "Full Stack Developer || Game Experience Developer || Automation Beginner",
         location: "Lumil, Silang, Cavite, Philippines",
         bio: "Passionate developer specializing in building modern web applications, game scripts, and automation tools. I create efficient, user-friendly solutions with clean code and great attention to detail.",
         email: "piskjulijo@gmail.com",
