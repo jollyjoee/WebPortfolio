@@ -29,9 +29,9 @@ function Hero() {
                 ${visible ? "opacity-100 scale-100" : "rotate-300 scale-0 opacity-0"}
             `}
             >
-                <span className="w-full text-center text-6xl font2 tracking-wider">Crafting Code, Designing Solutions</span>
-                <img src={Picture} className={`w-35 h-35 text-center text-xl mx-auto rounded-[200px] my-5 transition duration-300`}/>
-                <span className="w-full text-center text-xl font2 tracking-wider">Hi I'm Julijo Pisk</span>
+                <span className="w-full text-center md:text-6xl text-4xl font2 tracking-wider">Crafting Code, Designing Solutions</span>
+                <img src={Picture} className={`w-35 h-35 text-center mx-auto rounded-[200px] my-5 transition duration-300`}/>
+                <span className="w-full text-center md:text-xl text-lg font2 tracking-wider">Hi I'm Julijo Pisk</span>
             </div>
         </div>
     )
