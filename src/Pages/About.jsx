@@ -37,7 +37,7 @@ function About() {
         name: "Julijo Pisk Jr.",
         title: "Full Stack Developer || Game Experience Developer || Automation Specialist",
         location: "Lumil, Silang, Cavite, Philippines",
-        bio: "Passionate developer specializing in building modern web applications. I create efficient, user-friendly solutions with clean code and great attention to detail.",
+        bio: "Passionate developer specializing in building modern web applications, game scripts, and automation tools. I create efficient, user-friendly solutions with clean code and great attention to detail.",
         email: "piskjulijo@gmail.com",
         github: "https://github.com/jollyjoee",
     };
