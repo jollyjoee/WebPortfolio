@@ -133,7 +133,7 @@ function App() {
                 <CardImg src={Ucapi} onClick={() => handleImageClick(Ucapi)} />
                 <CardImg src={Ulticlick} onClick={() => handleImageClick(Ulticlick)} />
               </div>
-              <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack} /></div>
+              <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>
             </div>
           </Card>
           <Card title="MinMacro" className="grow mt-5">
@@ -157,14 +157,14 @@ function App() {
                     inline-block relative 
                     after:absolute after:left-0 after:-bottom-1
                     after:h-0.5 after:w-0 after:bg-current after:transition-all   
-                    after:duration-200 hover:after:w-full">Modrinth Plugin Developer</a></div>
+                    after:duration-200 hover:after:w-full">MODRINTH PLUGINS</a></div>
                 <ModrinthStats />
                 <Card title="Modrinth Sub" className='grow w-full'></Card>
               </div>
             </Card>
             <Card title="FiveM Scripts" className='grow'>
               <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FiveM Script Developer</div>
+                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FIVEM SCRIPTING</div>
               </div>
             </Card>
             <Card title="Foodify" className='grow'/>

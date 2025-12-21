@@ -22,7 +22,7 @@ function About() {
 
         return () => observer.disconnect();
     }, []);
-    
+
     const skills = [
         { name: "React", level: 75 },
         { name: "JavaScript", level: 75 },
