@@ -16,7 +16,7 @@ import CSSIcon from './assets/css-3.svg'
 import MMLogin from './assets/minmacrologin.png'
 import MMHome from './assets/minmacrohome.png'
 
-import Aurora from './Background/Aurora.jsx'
+import DarkVeil from './Background/DarkVeil.jsx'
 
 
 function App() {
@@ -115,13 +115,8 @@ function App() {
 
   return (
     <div className="min-h-screen min-w-full bg-linear-to-b from-gray-900 to-black" /*onContextMenu={(e) => e.preventDefault()}*/>
-      <div className='fixed min-w-screen h-100'>
-        <Aurora
-          colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-          blend={0.8}
-          amplitude={1.0}
-          speed={0.5} 
-        />
+      <div className='fixed min-w-screen min-h-full'>
+        <DarkVeil />
       </div>
       <Header />
       <main className='pt-28 px-10 md:px-60 pb-5'>
