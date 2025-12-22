@@ -69,8 +69,8 @@ function About() {
                         <div className="flex flex-col gap-3 text-center justify-end">
                             <h2 className="text-4xl font-bold">{info.name}</h2>
                             <div className="flex flex-col">
-                                {info.title.map((v) => {
-                                    return <p className="text-xl text-purple-400">{v}</p> 
+                                {info.title.map((v, i) => {
+                                    return <p key={`id-${i}`} className="text-xl text-purple-400">{v}</p> 
                                 })}
                             </div>
                         </div>

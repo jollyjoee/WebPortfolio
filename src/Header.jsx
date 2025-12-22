@@ -8,7 +8,7 @@ function Header() {
 
   // Menu links
   const links = [
-    { name: "Home", href: "#hero" },
+    { name: "Home", href: "#home" },
     { name: "Projects", href: "#projects" },
     { name: "About", href: "#about" },
     //{ name: "Contact", href: "#contact" },
@@ -26,7 +26,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2 - 80; // adjust for header
+      const scrollPosition = (window.scrollY + window.innerHeight / 2) - 80; // adjust for header
 
       for (let link of links) {
         const id = link.href.replace("#", ""); // get section ID
@@ -65,13 +65,15 @@ function Header() {
           {links.map((link) => (
             <a
               key={link.name}
-              href={link.href}
               onClick={(e) => {
+                const id = link.href.replace("#", "");
+                e.preventDefault();
                 if (link.name === "Home") {
-                  e.preventDefault();
                   window.scrollTo({ top: 0, behavior: 'smooth' })
+                } else {
+                  window.scrollTo({ top: (document.getElementById(id).offsetTop - 80), behavior: "smooth" })
                 }
-
+                history.pushState({ page: 'new-page' }, 'New Page Title', link.href)
                 setIsAnimating(true);
                 setTimeout(() => {
                   setIsAnimating(false);
@@ -124,8 +126,15 @@ function Header() {
             <a 
             key={link.name} 
             href={link.href} 
-            onClick={() => {
-                setIsOpen(false);
+            onClick={(e) => {
+                const id = link.href.replace("#", "");
+                e.preventDefault();
+                if (link.name === "Home") {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                } else {
+                  window.scrollTo({ top: (document.getElementById(id).offsetTop - 80), behavior: "smooth" })
+                }
+                
                 setIsAnimating(true);
                 setTimeout(() => {
                   setIsAnimating(false);

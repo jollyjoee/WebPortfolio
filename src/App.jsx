@@ -120,57 +120,56 @@ function App() {
       </div>
       <Header />
       <main className='pt-28 px-10 md:px-60 pb-5'>
-        <span id="hero"><Hero /></span>
-
-        <div id="projects" className="h-20 w-full" />
-          <Card title="Ulticlick" className="grow">
-            <div className="w-full h-full p-5">
-              <div className='flex flex-col w-full gap-2 pb-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>JAVA MOUSE AUTOMATION SOFTWARE</div>
-                <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with Cloudflare Auth</div>
-              </div>
-              <div className='flex gap-5 flex-wrap'> 
-                <CardImg src={Ucapi} onClick={() => handleImageClick(Ucapi)} />
-                <CardImg src={Ulticlick} onClick={() => handleImageClick(Ulticlick)} />
-              </div>
-              <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>
-            </div>
-          </Card>
-          <Card title="MinMacro" className="grow mt-5">
-            <div className="w-full h-full p-5">
-              <div className='flex flex-col w-full gap-2 pb-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>LOW-LEVEL GAME AUTOMATION</div>
-                <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with remote MySQL Integration</div>
-              </div>
-              <div className='flex gap-5 flex-wrap'> 
-                <CardImg src={MMLogin} onClick={() => handleImageClick(MMLogin)} />
-                <CardImg src={MMHome} onClick={() => handleImageClick(MMHome)} />
-              </div>
-              <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div>
-            </div>
-          </Card>
-  
-          <div className="flex gap-5 flex-wrap mt-5 items-stretch">
-            <Card title="Modrinth projects" className="grow">
-              <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'><a href="https://www.modrinth.com/user/JollyJoe" target="_blank" className="
-                    inline-block relative 
-                    after:absolute after:left-0 after:-bottom-1
-                    after:h-0.5 after:w-0 after:bg-current after:transition-all   
-                    after:duration-200 hover:after:w-full">MODRINTH PLUGINS</a></div>
-                <ModrinthStats />
-                <Card title="Modrinth Sub" className='grow w-full'></Card>
+        <span id="home"><Hero /></span>
+        <div id="projects">
+            <Card title="Ulticlick" className="grow">
+              <div className="w-full h-full p-5">
+                <div className='flex flex-col w-full gap-2 pb-3'>
+                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>JAVA MOUSE AUTOMATION SOFTWARE</div>
+                  <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with Cloudflare Auth</div>
+                </div>
+                <div className='flex gap-5 flex-wrap'> 
+                  <CardImg src={Ucapi} onClick={() => handleImageClick(Ucapi)} />
+                  <CardImg src={Ulticlick} onClick={() => handleImageClick(Ulticlick)} />
+                </div>
+                <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>
               </div>
             </Card>
-            <Card title="FiveM Scripts" className='grow'>
-              <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FIVEM SCRIPTING</div>
+            <Card title="MinMacro" className="grow mt-5">
+              <div className="w-full h-full p-5">
+                <div className='flex flex-col w-full gap-2 pb-3'>
+                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>LOW-LEVEL GAME AUTOMATION</div>
+                  <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with remote MySQL Integration</div>
+                </div>
+                <div className='flex gap-5 flex-wrap'> 
+                  <CardImg src={MMLogin} onClick={() => handleImageClick(MMLogin)} />
+                  <CardImg src={MMHome} onClick={() => handleImageClick(MMHome)} />
+                </div>
+                <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div>
               </div>
             </Card>
-            <Card title="Foodify" className='grow'/>
-          </div>
-          <div className='h-20 w-full flex items-center justify-center' id="about"></div>
-          <div className='relative'><About /></div>
+    
+            <div className="flex gap-5 flex-wrap mt-5 items-stretch">
+              <Card title="Modrinth projects" className="grow">
+                <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
+                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'><a href="https://www.modrinth.com/user/JollyJoe" target="_blank" className="
+                      inline-block relative 
+                      after:absolute after:left-0 after:-bottom-1
+                      after:h-0.5 after:w-0 after:bg-current after:transition-all   
+                      after:duration-200 hover:after:w-full">MODRINTH PLUGINS</a></div>
+                  <ModrinthStats />
+                  <Card title="Modrinth Sub" className='grow w-full'></Card>
+                </div>
+              </Card>
+              <Card title="FiveM Scripts" className='grow'>
+                <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
+                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FIVEM SCRIPTING</div>
+                </div>
+              </Card>
+              <Card title="Foodify" className='grow'/>
+            </div>
+        </div>
+        <div id="about"><About /></div>
       </main>
 
       {/* Fullscreen Overlay */}
