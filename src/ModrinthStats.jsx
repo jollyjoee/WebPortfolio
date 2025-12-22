@@ -47,8 +47,8 @@ function ModrinthStats() {
           top: rect.bottom + window.scrollY + 8,
           left: rect.left - (width / 10)
       });
-      setIsReady(true); 
-      setTimeout(() => setIsAnimating(true), 10);
+      
+      setTimeout(() => {setIsAnimating(true); setIsReady(true); }, 10);
     } else {
       setIsReady(false); 
     }
