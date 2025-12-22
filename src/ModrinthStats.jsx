@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { parseProjectsForDownloads } from "../utils/modrinth";
+import { ThreeDot } from 'react-loading-indicators';
 
 function ModrinthStats() {
   const [projects, setProjects] = useState([]);
@@ -74,7 +75,7 @@ function ModrinthStats() {
     };
   }, [isOpen]);
 
-  if (loading) return <div>Loading…</div>;
+  if (loading) return <ThreeDot color="#0f1f80" size="medium" text="" textColor="" />;
 
   return (
     <>

@@ -19,7 +19,6 @@ import MMHome from './assets/minmacrohome.png'
 
 import DarkVeil from './Background/DarkVeil.jsx'
 
-
 function App() {
   const [showOverlay, setShowOverlay] = useState(false)
   const [overlayImage, setOverlayImage] = useState(null)

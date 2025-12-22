@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { parseProjectsForDownloads } from "../utils/modrinth";
 import HoverTooltip from "../src/Components/HoverTooltip";
+import { ThreeDot } from "react-loading-indicators";
 
 function ModrinthIcons({ className, classNameInner }) {
   const [projects, setProjects] = useState([]);
@@ -26,7 +27,7 @@ function ModrinthIcons({ className, classNameInner }) {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading…</div>;
+  if (loading) return <ThreeDot color="#0f1f80" size="medium" text="" textColor="" />;
 
   return (
     <div className={className}>
