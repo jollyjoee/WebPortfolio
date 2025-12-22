@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { parseProjectsForDownloads } from "../utils/modrinth";
 
@@ -30,7 +30,7 @@ function ModrinthIcons({ className, classNameInner}) {
     fetchData();
   }, []);
 
-  const handleMouseEnter = (e, proj) => {
+  const handleMouseEnter = useCallback((e, proj) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setWidth((rect.right - rect.left) * 3);
     setPosition({
@@ -38,8 +38,8 @@ function ModrinthIcons({ className, classNameInner}) {
         left: rect.left - (width/3)
     });
     setHoveredProject(proj);
-    setTimeout(() => setIsAnimating(true), 50)
-  };
+    setTimeout(() => setIsAnimating(true), 10)
+  }, [width]);
 
   const handleMouseLeave = () => {
     setHoveredProject(null);
