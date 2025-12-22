@@ -36,6 +36,7 @@ function Header() {
           const bottom = top + section.offsetHeight;
           if (scrollPosition >= top && scrollPosition < bottom) {
             setIsSelected(link.name); // use link.name directly
+            history.pushState({ page: 'new-page' }, 'New Page Title', link.href)
             break;
           }
         }
