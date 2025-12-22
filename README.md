@@ -84,7 +84,7 @@ Deployed on **Cloudflare Pages** with automatic builds from the `main` branch.
 **Julijo Pisk Jr.**
 - Email: piskjulijo@gmail.com
 - GitHub: [@jollyjoee](https://github.com/jollyjoee)
-- Portfolio: [your-domain.com](https://jpisk.site)
+- Portfolio: [jpisk.site](https://jpisk.site)
 
 ## 📄 License
 
