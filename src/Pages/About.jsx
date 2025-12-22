@@ -4,6 +4,7 @@ import Mugshot from '../assets/mugshot.png'
 function About() {
     const [visible, setVisible] = useState(false);
     const [emailText, setEmailText] = useState(true)
+    const [phoneText, setPhoneText] = useState(true)
     const ref = useRef(null)
 
     useEffect(() => {
@@ -45,6 +46,7 @@ function About() {
         bio: "Passionate developer specializing in building modern web applications, game scripts, and automation tools. Focused in creating efficient, user-friendly solutions with clean code and great attention to detail.",
         email: "piskjulijo@gmail.com",
         github: "https://github.com/jollyjoee",
+        phone: "+63 (992) 761-4953"
     };
 
     return (
@@ -96,7 +98,7 @@ function About() {
                                 }}
                                 className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition duration-150"
                             >
-                                { emailText ? 'Email' : 'Email copied to clipboard!'}
+                                { emailText ? 'Email' : 'Copied to clipboard!'}
                             </a>
                             <a 
                                 href={info.github}
@@ -106,6 +108,15 @@ function About() {
                             >
                                 GitHub
                             </a>
+                            <p className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150 select-text cursor-pointer" onClick={(e) => {
+                                setPhoneText(false)
+                                    setTimeout(() => {
+                                        setPhoneText(true)
+                                    }, 1300)
+                                if (document.activeElement === e.target) {
+                                    navigator.clipboard.writeText(info.phone);
+                                }
+                                }}>{ phoneText ? info.phone : "Copied to clipboard!" }</p>
                         </div>
                     </div>
                 </div>
