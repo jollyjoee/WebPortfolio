@@ -120,7 +120,7 @@ function App() {
         <DarkVeil />
       </div>
       <Header />
-      <main className='pt-28 px-10 md:px-60 pb-5'>
+      <main className='pt-28 px-10 md:px-50 pb-5'>
         <span id="home"><Hero /></span>
         <div id="projects">
             <Card title="Ulticlick" className="grow">

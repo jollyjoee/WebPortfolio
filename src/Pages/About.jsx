@@ -16,7 +16,7 @@ function About() {
                 setVisible(false);
             }
         },
-        { threshold: 0.3 }
+        { threshold: 0.2 }
         );
 
         if (ref.current) observer.observe(ref.current);
