@@ -65,7 +65,7 @@ function ModrinthIcons({ className, classNameInner}) {
         {hoveredProject && createPortal(
             <div
                 className={`absolute opacity-0 px-5 py-2 h-fit bg-neutral-800/90 rounded-2xl 
-                    z-9999 shadow-[inset_0px_0px_47px_-16px_#0f0f0f] transition-all duration-400 ease-out
+                    z-9999 shadow-[inset_0px_0px_47px_-16px_#0f0f0f] transition-all duration-500 ease-out
                     flex flex-col gap-2
                     ${isAnimating 
                     ? 'opacity-100 translate-y-0 scale-100' 

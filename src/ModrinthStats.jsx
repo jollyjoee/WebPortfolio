@@ -111,11 +111,11 @@ function ModrinthStats() {
           style={{ top: `${position.top}px`, left: `${position.left}px`, width: `${width}px` }}
           ref={menuRef}
         >
-          <ul>
+          <ul className="flex flex-col gap-3">
             {projects.map((p, index) => (
               <li 
                 key={p.name} 
-                className={`text-left align-middle transition-all duration-200
+                className={`text-left align-middle transition-all duration-200 
                   ${isAnimating 
                     ? `translate-y-0 opacity-100` 
                     : "translate-y-2 opacity-0"
