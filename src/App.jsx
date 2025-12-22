@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
 import Card from './Components/Card.jsx'
 import ModrinthStats from './ModrinthStats.jsx'
+import ModrinthIcons from './ModrinthIcons.jsx';
 import CardImg from './Components/CardImg.jsx'
 import InfiniteScroll from './Components/Scroller.jsx';
 
@@ -151,14 +152,33 @@ function App() {
     
             <div className="flex gap-5 flex-wrap mt-5 items-stretch">
               <Card title="Modrinth projects" className="grow">
-                <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
-                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'><a href="https://www.modrinth.com/user/JollyJoe" target="_blank" className="
-                      inline-block relative 
-                      after:absolute after:left-0 after:-bottom-1
-                      after:h-0.5 after:w-0 after:bg-current after:transition-all   
-                      after:duration-200 hover:after:w-full">MODRINTH PLUGINS</a></div>
+                <div className='flex flex-col gap-2 h-full w-full items-center p-6'>
+                  {/* Title */}
+                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest'>
+                    <a 
+                      href="https://www.modrinth.com/user/JollyJoe" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        inline-block relative 
+                        after:absolute after:left-0 after:-bottom-1
+                        after:h-0.5 after:w-0 after:bg-current 
+                        after:transition-all after:duration-200 
+                        hover:after:w-full
+                      "
+                    >
+                      MODRINTH PLUGINS
+                    </a>
+                  </div>
+                  
+                  {/* Stats */}
                   <ModrinthStats />
-                  <Card title="Modrinth Sub" className='grow w-full'></Card>
+                  
+                  {/* Project Icons - Responsive Grid */}
+                  <ModrinthIcons 
+                    className="w-full h-full p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 justify-items-center" 
+                    classNameInner="md:w-20 md:h-20 h-16 w-16 ring-2 ring-neutral-500/30 rounded-2xl hover:scale-110 transition-transform duration-200 shadow-lg cursor-pointer" 
+                  />
                 </div>
               </Card>
               <Card title="FiveM Scripts" className='grow'>

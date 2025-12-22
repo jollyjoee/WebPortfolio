@@ -84,7 +84,7 @@ function About() {
                         <p className="text-gray-300 leading-relaxed">{info.bio}</p>
                         
                         {/* Contact Links */}
-                        <div className="flex gap-4 mt-6">
+                        <div className="flex gap-4 mt-6 flex-wrap">
                             <a 
                                 href={`mailto:${info.email}`}
                                 onClick={(e) => {
@@ -96,7 +96,7 @@ function About() {
                                         navigator.clipboard.writeText(info.email);
                                     }
                                 }}
-                                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition duration-150"
+                                className="h-10 px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition duration-150"
                             >
                                 { emailText ? 'Email' : 'Copied to clipboard!'}
                             </a>
@@ -104,11 +104,11 @@ function About() {
                                 href={info.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150"
+                                className="h-10 px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150"
                             >
                                 GitHub
                             </a>
-                            <p className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150 select-text cursor-pointer" onClick={(e) => {
+                            <p className="h-10 px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-lg transition-colors duration-150 select-text cursor-pointer" onClick={(e) => {
                                 setPhoneText(false)
                                     setTimeout(() => {
                                         setPhoneText(true)

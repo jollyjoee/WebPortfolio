@@ -135,7 +135,7 @@ function Header() {
                 } else {
                   window.scrollTo({ top: (document.getElementById(id).offsetTop - 80), behavior: "smooth" })
                 }
-                
+                setIsOpen(false)
                 setIsAnimating(true);
                 setTimeout(() => {
                   setIsAnimating(false);
@@ -144,7 +144,7 @@ function Header() {
               }}
             className={`block px-4 py-2 rounded-lg hover:bg-gray-700 transition-all duration-100 transform font-bold
               ${ isOpen ? `translate-y-0 opacity-100 delay-${index * 75}` : "translate-y-2 opacity-0" } 
-              ${ selected === link.name ? "hidden" : ""}
+              ${selected === link.name ? "text-blue-400" : "hover:text-blue-400"}
             `}>{link.name}</a>
           ))}
         </nav>
