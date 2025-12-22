@@ -46,8 +46,8 @@ function App() {
     },
     {
       id: 5,
-      text: 'HTML5',
-      iconPath: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+      text: 'HTML',
+      iconPath: 'https://cdn.iconscout.com/icon/free/png-256/free-html-5-icon-svg-download-png-1175208.png',
     },
     {
       id: 6,
@@ -74,8 +74,8 @@ function App() {
     },
     {
       id: 4,
-      text: 'HTML5',
-      iconPath: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg',
+      text: 'HTML',
+      iconPath: 'https://cdn.iconscout.com/icon/free/png-256/free-html-5-icon-svg-download-png-1175208.png',
     },
     {
       id: 5,
@@ -126,7 +126,7 @@ function App() {
           <Card title="Ulticlick" className="grow">
             <div className="w-full h-full p-5">
               <div className='flex flex-col w-full gap-2 pb-3'>
-                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>JAVA AUTOMATION SOFTWARE</div>
+                <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>JAVA MOUSE AUTOMATION SOFTWARE</div>
                 <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with Cloudflare Auth</div>
               </div>
               <div className='flex gap-5 flex-wrap'> 

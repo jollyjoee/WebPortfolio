@@ -40,9 +40,9 @@ function About() {
 
     const info = {
         name: "Julijo Pisk Jr.",
-        title: "Full Stack Developer || Game Experience Developer || Automation Beginner",
+        title: ["Full Stack Developer", "Game Experience Developer", "Automation Enthusiast"],
         location: "Lumil, Silang, Cavite, Philippines",
-        bio: "Passionate developer specializing in building modern web applications, game scripts, and automation tools. I create efficient, user-friendly solutions with clean code and great attention to detail.",
+        bio: "Passionate developer specializing in building modern web applications, game scripts, and automation tools. Focused in creating efficient, user-friendly solutions with clean code and great attention to detail.",
         email: "piskjulijo@gmail.com",
         github: "https://github.com/jollyjoee",
     };
@@ -66,9 +66,13 @@ function About() {
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        <div className="flex flex-col gap-1 text-center justify-end">
-                            <h2 className="text-3xl font-bold">{info.name}</h2>
-                            <p className="text-xl text-purple-400">{info.title}</p>
+                        <div className="flex flex-col gap-3 text-center justify-end">
+                            <h2 className="text-4xl font-bold">{info.name}</h2>
+                            <div className="flex flex-col">
+                                {info.title.map((v) => {
+                                    return <p className="text-xl text-purple-400">{v}</p> 
+                                })}
+                            </div>
                         </div>
                     </div>
 
@@ -130,7 +134,7 @@ function About() {
             {/* Map */}
             <div className="bg-neutral-800/50 rounded-2xl p-6 min-h-fit w-full">
                 <h3 className="text-2xl font-bold mb-2">Location</h3>
-                <p className="text-sm text-gray-400 mb-2">📍 {info.location}</p>
+                <p className="text-sm text-gray-400 mb-3">📍 {info.location}</p>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9200.138580174866!2d121.00639212433775!3d14.184129184695344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd7bea47823f65%3A0x7de76e34763f2e1b!2sLumil%2C%20Silang%2C%20Cavite!5e0!3m2!1sen!2sph!4v1766340359082!5m2!1sen!2sph"
                     loading="lazy"

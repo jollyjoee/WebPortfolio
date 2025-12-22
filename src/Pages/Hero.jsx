@@ -62,7 +62,7 @@ function Hero() {
                 <div className="w-full text-center md:text-5xl text-3xl font2 tracking-wider z-100">Crafting Code</div>
                 <img src={icons[currentIconIndex]} className={`w-35 h-35 text-center mx-auto my-5 transition duration-600 ${
                   isAnimating 
-                    ? 'opacity-0 rotate-250 scale-0'  
+                    ? 'opacity-0 rotate-250 scale-0'
                     : 'opacity-100 scale-100'
                 }`}/>
                 <div className="w-full text-center md:text-5xl text-3xl font2 tracking-wider">Designing Solutions</div>
