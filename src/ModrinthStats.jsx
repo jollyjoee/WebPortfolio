@@ -42,17 +42,18 @@ function ModrinthStats() {
   useEffect(() => {
     if (isOpen && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
-      setWidth((rect.right - rect.left) * 1.25);
+      const newWidth = (rect.right - rect.left) * 1.25
+      setWidth(newWidth);
       setPosition({
           top: rect.bottom + window.scrollY + 8,
-          left: rect.left - (width / 10)
+          left: rect.left - (newWidth / 10)
       });
       setIsReady(true); 
       setTimeout(() => setIsAnimating(true), 10);
     } else {
       setIsReady(false); 
     }
-  }, [isOpen, width]);
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
