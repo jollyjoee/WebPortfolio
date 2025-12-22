@@ -136,23 +136,22 @@ function App() {
                 <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>
               </div>
             </Card>
-            <Card title="MinMacro" className="grow mt-5">
-              <div className="w-full h-full p-5">
-                <div className='flex flex-col w-full gap-2 pb-3'>
-                  <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>LOW-LEVEL GAME AUTOMATION</div>
-                  <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with remote MySQL Integration</div>
+            <div className="flex flex-wrap gap-5 w-full mt-5">
+              <Card title="MinMacro" className='grow'>
+                <div className="w-full h-full p-5">
+                  <div className='flex flex-col w-full gap-2 pb-3'>
+                    <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>LOW-LEVEL GAME AUTOMATION</div>
+                    <div className='md:text-2xl text-sm font-bold w-full text-center tracking-wide z-100'>with remote MySQL Integration</div>
+                  </div>
+                  <div className='flex gap-5 flex-wrap'> 
+                    <CardImg src={MMLogin} onClick={() => handleImageClick(MMLogin)} />
+                    <CardImg src={MMHome} onClick={() => handleImageClick(MMHome)} />
+                  </div>
+                  {/* <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div> */}
                 </div>
-                <div className='flex gap-5 flex-wrap'> 
-                  <CardImg src={MMLogin} onClick={() => handleImageClick(MMLogin)} />
-                  <CardImg src={MMHome} onClick={() => handleImageClick(MMHome)} />
-                </div>
-                <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div>
-              </div>
-            </Card>
-    
-            <div className="flex gap-5 flex-wrap mt-5 items-stretch">
+              </Card>
               <Card title="Modrinth projects" className="grow">
-                <div className='flex flex-col gap-2 h-full w-full items-center p-6'>
+                <div className='flex flex-col gap-2 h-full items-center p-6 grow'>
                   {/* Title */}
                   <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest'>
                     <a 
@@ -176,17 +175,17 @@ function App() {
                   
                   {/* Project Icons - Responsive Grid */}
                   <ModrinthIcons 
-                    className="w-full h-full p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 justify-items-center" 
+                    className="w-full h-full p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 justify-items-center content-around" 
                     classNameInner="md:w-20 md:h-20 h-16 w-16 ring-2 ring-neutral-500/30 rounded-2xl hover:scale-110 transition-transform duration-200 shadow-lg cursor-pointer" 
                   />
                 </div>
               </Card>
-              <Card title="FiveM Scripts" className='grow'>
+              {/*<Card title="FiveM Scripts" className='grow'>
                 <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
                   <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FIVEM SCRIPTING</div>
                 </div>
               </Card>
-              <Card title="Foodify" className='grow'/>
+              <Card title="Foodify" className='grow'/>*/}
             </div>
         </div>
         <div id="about"><About /></div>

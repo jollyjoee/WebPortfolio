@@ -42,15 +42,15 @@ function ModrinthStats() {
   useEffect(() => {
     if (isOpen && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
+      setWidth((rect.right - rect.left) * 1.25);
       setPosition({
-        top: rect.bottom + window.scrollY + 8,
-        left: rect.left - 5
+          top: rect.bottom + window.scrollY + 8,
+          left: rect.left - (width / 10)
       });
-      setWidth(rect.right - rect.left);
       setIsReady(true); 
       setTimeout(() => setIsAnimating(true), 10);
     } else {
-      setIsReady(false); // ← Reset on close
+      setIsReady(false); 
     }
   }, [isOpen]);
 
@@ -59,8 +59,8 @@ function ModrinthStats() {
 
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsAnimating(false); // ← Start close animation
-        setTimeout(() => setIsOpen(false), 200); // ← Wait for animation to finish
+        setIsAnimating(false); 
+        setTimeout(() => setIsOpen(false), 200); 
       }
     };
 
@@ -102,7 +102,7 @@ function ModrinthStats() {
 
       {isOpen && isReady && createPortal(
         <div 
-          className={`absolute opacity-0 px-5 py-2 h-fit bg-neutral-800/90 rounded-2xl z-9999 shadow-[inset_0px_0px_47px_-16px_#0f0f0f]
+          className={`absolute opacity-0 px-5 py-5 h-fit bg-neutral-800/90 rounded-2xl z-9999 shadow-[inset_0px_0px_47px_-16px_#0f0f0f]
             transition-all duration-200 ease-out
             ${isAnimating 
               ? 'opacity-100 translate-y-0 scale-100' 

@@ -37,7 +37,6 @@ function ModrinthIcons({ className, classNameInner}) {
         top: rect.bottom + window.scrollY + 8,
         left: rect.left - (width/3)
     });
-    console.log(position.left)
     setHoveredProject(proj);
     setTimeout(() => setIsAnimating(true), 50)
   };
