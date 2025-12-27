@@ -4,9 +4,9 @@ import Mugshot from '../assets/mugshot.png'
 function About() {
     const [visible, setVisible] = useState(false);
     const [emailText, setEmailText] = useState(true)
-    const [hasAnimated, setHasAnimated] = useState(false);
     const [phoneText, setPhoneText] = useState(true)
-    const ref = useRef(null)
+    const ref = useRef(null);
+    const [hasAnimated, setHasAnimated] = useState(false);
 
     useEffect(() => {
         if (hasAnimated) return;
@@ -15,6 +15,7 @@ function About() {
         ([entry]) => {
             if (entry.isIntersecting) {
                 setVisible(true);
+                setHasAnimated(true);
             }
         },
         { threshold: 0.2 }

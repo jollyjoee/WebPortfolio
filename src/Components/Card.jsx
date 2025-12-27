@@ -4,23 +4,25 @@ import DotGrid from '../Background/DotGrid.jsx'
 function Card({ className = "", children }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    if (hasAnimated) return;
+        
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
+          if (entry.isIntersecting) {
+              setVisible(true);
+              setHasAnimated(true);
+          }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
-    if (ref.current) observer.observe(ref.current);
+      if (ref.current) observer.observe(ref.current);
 
-    return () => observer.disconnect();
-  }, []);
+      return () => observer.disconnect();
+  }, [hasAnimated]);
 
   return (
     <div ref={ref} className={className}>
