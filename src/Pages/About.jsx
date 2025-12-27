@@ -4,16 +4,17 @@ import Mugshot from '../assets/mugshot.png'
 function About() {
     const [visible, setVisible] = useState(false);
     const [emailText, setEmailText] = useState(true)
+    const [hasAnimated, setHasAnimated] = useState(false);
     const [phoneText, setPhoneText] = useState(true)
     const ref = useRef(null)
 
     useEffect(() => {
+        if (hasAnimated) return;
+        
         const observer = new IntersectionObserver(
         ([entry]) => {
             if (entry.isIntersecting) {
                 setVisible(true);
-            } else {
-                setVisible(false);
             }
         },
         { threshold: 0.2 }
@@ -22,7 +23,7 @@ function About() {
         if (ref.current) observer.observe(ref.current);
 
         return () => observer.disconnect();
-    }, []);
+    }, [hasAnimated]);
 
     const skills = [
         { name: "React", level: 75 },
