@@ -102,7 +102,7 @@ function About() {
                     </div>
                 </div>
 
-                {/* Skills 
+                {/* Skills */}
                 <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col">
                     <h3 className="text-2xl font-bold mb-6">Skills</h3>
                     <div className="grow flex flex-col justify-between">
@@ -121,9 +121,9 @@ function About() {
                             </div>
                         ))}
                     </div>
-                </div>  */}    
+                </div>      
             </div>
-            {/* Map */}
+            {/* Map 
             <div className="bg-neutral-800/50 rounded-2xl p-6 min-h-fit w-full">
                 <h3 className="text-2xl font-bold mb-2">Location</h3>
                 <p className="text-sm text-gray-400 mb-3">📍 {info.location}</p>
@@ -132,7 +132,7 @@ function About() {
                     loading="lazy"
                     className='w-full min-h-75 rounded-xl'
                 />
-            </div>
+            </div>*/}
         </div>
     )
 }
