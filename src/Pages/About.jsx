@@ -1,30 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Mugshot from '../assets/mugshot.png'
 
 function About() {
-    const [visible, setVisible] = useState(false);
     const [emailText, setEmailText] = useState(true)
     const [phoneText, setPhoneText] = useState(true)
-    const ref = useRef(null);
-    const [hasAnimated, setHasAnimated] = useState(false);
 
-    useEffect(() => {
-        if (hasAnimated) return;
-        
-        const observer = new IntersectionObserver(
-        ([entry]) => {
-            if (entry.isIntersecting) {
-                setVisible(true);
-                setHasAnimated(true);
-            }
-        },
-        { threshold: 0.2 }
-        );
-
-        if (ref.current) observer.observe(ref.current);
-
-        return () => observer.disconnect();
-    }, [hasAnimated]);
+    // REMOVED ALL OBSERVER CODE
 
     const skills = [
         { name: "React", level: 75 },
@@ -52,10 +33,8 @@ function About() {
     };
 
     return (
-        <div ref={ref} className={`min-w-full min-h-120 flex flex-col gap-8 p-5 transition duration-750
-            ${visible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8"}`}>
+        <div className="min-w-full min-h-120 flex flex-col gap-8 p-5">
+            {/* REMOVED ALL ANIMATION CLASSES */}
             
             {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -135,7 +114,7 @@ function About() {
                                 </div>
                                 <div className="w-full bg-neutral-700 rounded-full h-2.5">
                                     <div 
-                                        className="bg-linear-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
+                                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
                                         style={{ width: `${skill.level}%` }}
                                     />
                                 </div>
