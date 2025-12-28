@@ -116,7 +116,9 @@ function App() {
 
   return (
     <div className="min-h-screen min-w-full bg-linear-to-b from-gray-900 to-black" /*onContextMenu={(e) => e.preventDefault()}*/>
-      
+      <div className='fixed min-w-screen min-h-full'>
+        <DarkVeil />
+      </div>
       <Header />
       <main className='pt-28 px-10 md:px-50 pb-5'>
         <span id="home"><Hero /></span>
