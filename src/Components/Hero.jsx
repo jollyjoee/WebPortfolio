@@ -20,7 +20,7 @@ function Hero() {
         mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}>
         <h1 className="text-6xl md:text-8xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-[gradientShift_3s_ease_infinite] bg-[length:200%_auto]">
             Julijo Pisk Jr.
           </span>
         </h1>
@@ -41,6 +41,13 @@ function Hero() {
           </button>
         </div>
       </div>
+      <style jsx>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% -50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
     </section>
   );
 }
