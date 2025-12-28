@@ -24,7 +24,7 @@ function ProjectCard({ project, index }) {
         
         <p className="text-gray-400 mb-4">{project.description}</p>
         
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className={`flex flex-wrap gap-2 ${(project.link || project.github) ? 'mb-4' : ''}`}>
           {project.tech.map((tech) => (
             <span key={tech} className="px-3 py-1 bg-gray-700/50 rounded-full text-sm text-cyan-400">
               {tech}
@@ -32,16 +32,20 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
         
-        <div className="flex gap-3">
-          <button className="z-1000 flex-1 px-4 py-2 bg-cyan-500 rounded-lg font-semibold hover:bg-cyan-600 transition-colors">
-            <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
-          </button>
-          {project.github && (
-            <button className="z-1000 px-4 py-2 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-colors">
-              GitHub
-            </button>
-          )}
-        </div>
+        {(project.link || project.github) && (
+          <div className="flex gap-3">
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className='z-1000 text-center flex-1 px-4 py-2 bg-cyan-500 rounded-lg font-semibold hover:bg-cyan-600 transition-colors'>
+                View Project
+              </a>
+            )}
+            {project.github && (
+              <button className="z-1000 px-4 py-2 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-colors">
+                GitHub
+              </button>
+            )}
+          </div>
+        )}
       </div>
       
       <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl group-hover:scale-150 transition-transform"></div>
