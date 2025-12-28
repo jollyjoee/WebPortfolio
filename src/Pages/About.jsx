@@ -102,7 +102,7 @@ function About() {
                     </div>
                 </div>
 
-                {/* Skills */}
+                {/* Skills 
                 <div className="bg-neutral-800/50 rounded-2xl p-6 flex flex-col">
                     <h3 className="text-2xl font-bold mb-6">Skills</h3>
                     <div className="grow flex flex-col justify-between">
@@ -114,14 +114,14 @@ function About() {
                                 </div>
                                 <div className="w-full bg-neutral-700 rounded-full h-2.5">
                                     <div 
-                                        className="bg-gradient-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
+                                        className="bg-linear-to-r from-purple-500 to-pink-500 h-2.5 rounded-full transition-all duration-1000"
                                         style={{ width: `${skill.level}%` }}
                                     />
                                 </div>
                             </div>
                         ))}
                     </div>
-                </div>      
+                </div>  */}    
             </div>
             {/* Map */}
             <div className="bg-neutral-800/50 rounded-2xl p-6 min-h-fit w-full">
