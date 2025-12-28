@@ -12,7 +12,7 @@ function Hero() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
-        <div className="absolute w-196 h-196 bg-cyan-500/5 rounded-full blur-3xl top-10 left-70 animate-ping [animation-duration:5s]"></div>
+        <div className="absolute w-96 h-96 md:w-196 md:h-196 bg-cyan-500/10 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping [animation-duration:5s]"></div>
         <div className="absolute w-96 h-96 bg-blue-500/30 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"></div>
       </div>
 
