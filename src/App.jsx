@@ -148,8 +148,9 @@ function App() {
                   {/* <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={mmStack} /></div> */}
                 </div>
               </Card>
-              {/* <Card title="Modrinth projects" className="grow">
+              <Card title="Modrinth projects" className="grow">
                 <div className='flex flex-col gap-2 h-full items-center p-6 grow'>
+                  {/* Title */}
                   <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest'>
                     <a 
                       href="https://www.modrinth.com/user/JollyJoe" 
@@ -167,14 +168,16 @@ function App() {
                     </a>
                   </div>
                   
+                  {/* Stats */}
                   <ModrinthStats />
                   
+                  {/* Project Icons - Responsive Grid */}
                   <ModrinthIcons 
                     className="w-full h-full p-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-4 justify-items-center content-around" 
                     classNameInner="md:w-20 md:h-20 h-16 w-16 ring-2 ring-neutral-500/30 rounded-2xl hover:scale-110 transition-transform duration-200 shadow-lg cursor-pointer" 
                   />
                 </div>
-              </Card>*/}
+              </Card>
               {/*<Card title="FiveM Scripts" className='grow'>
                 <div className='flex flex-col gap-2 z-150 h-full w-full items-center p-3'>
                   <div className='md:text-4xl text-xl font-extrabold w-full text-center tracking-widest pt-2 text-wrap z-100'>FIVEM SCRIPTING</div>
@@ -183,7 +186,8 @@ function App() {
               <Card title="Foodify" className='grow'/>*/}
             </div>
         </div>
-        <div id="about"><About /></div>
+        {/* 
+        <div id="about"><About /></div>*/}
       </main>
 
       {/* Fullscreen Overlay */}
