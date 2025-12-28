@@ -186,8 +186,8 @@ function App() {
               <Card title="Foodify" className='grow'/>*/}
             </div>
         </div>
-        {/* 
-        <div id="about"><About /></div>*/}
+        {/* */}
+        <div id="about"><About /></div>
       </main>
 
       {/* Fullscreen Overlay */}
