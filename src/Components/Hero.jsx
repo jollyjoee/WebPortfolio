@@ -11,8 +11,9 @@ function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
-        <div className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-1000"></div>
+        <div className="absolute w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div className="absolute w-196 h-196 bg-cyan-500/5 rounded-full blur-3xl top-10 left-70 animate-ping [animation-duration:5s]"></div>
+        <div className="absolute w-96 h-96 bg-blue-500/30 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"></div>
       </div>
 
       <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${
