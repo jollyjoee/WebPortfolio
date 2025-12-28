@@ -1,0 +1,47 @@
+import { useState, useEffect } from 'react';
+
+function Hero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div className="absolute w-96 h-96 bg-blue-500/20 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse delay-1000"></div>
+      </div>
+
+      <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${
+        mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}>
+        <h1 className="text-6xl md:text-8xl font-bold mb-6">
+          <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Julijo Pisk Jr.
+          </span>
+        </h1>
+        <p className="text-2xl md:text-3xl text-gray-300 mb-4">Full Stack Developer</p>
+        <p className="text-xl text-gray-400 mb-8">Building modern web experiences</p>
+        <div className="flex gap-4 justify-center">
+          <button
+            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full font-semibold hover:scale-105 transition-transform"
+          >
+            View Projects
+          </button>
+          <button
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-8 py-3 border-2 border-cyan-500 rounded-full font-semibold hover:bg-cyan-500/10 transition-colors"
+          >
+            About Me
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
