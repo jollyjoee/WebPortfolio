@@ -133,7 +133,7 @@ function App() {
                   <CardImg src={Ucapi} onClick={() => handleImageClick(Ucapi)} />
                   <CardImg src={Ulticlick} onClick={() => handleImageClick(Ulticlick)} />
                 </div>
-                <div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>
+                {/*<div className='w-full h-fit mx-auto md:px-25'><InfiniteScroll items={ucStack}/></div>*/}
               </div>
             </Card>
             <div className="flex flex-wrap gap-5 w-full mt-5">
