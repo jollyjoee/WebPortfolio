@@ -37,6 +37,14 @@ function Projects() {
       link: 'https://modrinth.com/user/JollyJoe/projects',
       github: ''
     },
+    {
+      name: 'Kosmed Website',
+      icon: '💊',
+      description: `A modern website with client-controlled design for Kosmed Aesthetic Clinic. With booking and service information.`,
+      tech: ['Html', 'CSS', 'JavaScript', 'GoDaddy Hosting'],
+      link: 'https://kosmed.ph',
+      github: ''
+    },
   ];
 
   return (
