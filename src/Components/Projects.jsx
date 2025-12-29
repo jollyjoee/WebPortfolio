@@ -40,7 +40,11 @@ function Projects() {
     {
       name: 'Kosmed Website',
       icon: '💊',
-      description: `A modern website with ${<span className="text-cyan-400">client-controlled design</span>} for Kosmed Aesthetic Clinic. With booking and service information.`,
+      description: (
+        <>
+          A modern website with <span className="text-cyan-400">client-controlled design</span> for Kosmed Aesthetic Clinic. With booking and service information.
+        </>
+      ),
       tech: ['Html', 'CSS', 'JavaScript', 'GoDaddy Hosting'],
       link: 'https://kosmed.ph',
       github: ''
