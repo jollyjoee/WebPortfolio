@@ -9,9 +9,9 @@ function ProjectCard({ project, index }) {
   }, [index]);
 
   return (
-    <div className={`group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition-all duration-500 ${
-      visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-    }`}>
+    <div className={`group relative bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition-all duration-500 
+      hover:-translate-y-2
+      ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       
       <div className="relative p-6 flex flex-col justify-between h-full">

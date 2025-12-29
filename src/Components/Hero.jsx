@@ -8,12 +8,12 @@ function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[64px_64px]">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-cyan-500/30 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
+        <div className="absolute w-126 h-126 bg-cyan-500/30 rounded-full blur-3xl -top-48 -left-48 animate-pulse"></div>
         <div className="absolute w-96 h-96 md:w-196 md:h-196 bg-cyan-500/10 rounded-full blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-ping [animation-duration:5s]"></div>
-        <div className="absolute w-96 h-96 bg-blue-500/30 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"></div>
+        <div className="absolute w-126 h-126 bg-blue-500/30 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse"></div>
       </div>
 
       <div className={`relative z-10 text-center px-6 transition-all duration-1000 ${
