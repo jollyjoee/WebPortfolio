@@ -27,6 +27,7 @@ function SkillBar({ skill, level, index }) {
 function About() {
   const skillsUnsorted = [
     { name: "React", level: 75 },
+    { name: "Next.js", level: 75 },
     { name: "JavaScript", level: 75 },
     { name: "Java", level: 70 },
     { name: "Tailwind CSS", level: 90 },
@@ -35,7 +36,7 @@ function About() {
     { name: "Python", level: 60 },
     { name: "AutoHotKey", level: 95 },
     { name: "Lua", level: 75 },
-    { name: "Cloudflare Tools", level: 65 },
+    { name: "Cloudflare", level: 65 },
   ];
 
   const skills = [...skillsUnsorted].sort((a, b) => b.level - a.level);
@@ -68,9 +69,9 @@ function About() {
                 <p className="text-blue-400 text-lg">Game Experience Developer</p>
                 <p className="text-purple-400 text-lg">Automation Enthusiast</p>
               </div>
-              
+
               <p className="text-gray-300 leading-relaxed mb-6">
-                Passionate developer specializing in building modern web applications, game scripts, and automation tools. 
+                Passionate developer specializing in building modern web applications, game scripts, and automation tools.
                 Focused on creating efficient, user-friendly solutions with clean code and great attention to detail.
               </p>
 
@@ -81,7 +82,7 @@ function About() {
                 >
                   {emailCopied ? '✓ Email Copied!' : '📧 piskjulijo@gmail.com'}
                 </button>
-                
+
                 <button
                   onClick={() => copyToClipboard('+63 (992) 761-4953', setPhoneCopied)}
                   className="w-full px-6 py-3 border-2 border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-colors"

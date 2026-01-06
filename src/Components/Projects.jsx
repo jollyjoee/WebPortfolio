@@ -7,7 +7,11 @@ function Projects() {
   const projects = [
     {
       name: 'Starcast',
-      icon: '⭐',
+      icon: (
+        <>
+          <img src="https://starcast.ph/android-chrome-512x512.png" className='w-10 h-10' />
+        </>
+      ),
       description: 'Proprietary voting platform for StarhorizonTV\'s contests. Features real-time results and an admin panel. Fully integrated with Maya checkout API',
       tech: ['React', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment'],
       link: 'https://starcast.ph',
@@ -31,7 +35,11 @@ function Projects() {
     },
     {
       name: 'Modrinth Projects',
-      icon: '📦',
+      icon: (
+        <>
+          <img src="https://modrinth.com/favicon-light.ico" className='w-8 h-8' />
+        </>
+      ),
       description: `Collection of Minecraft plugins with ${modrinthDownloads.totalDownloads} total downloads`,
       tech: ['Java'],
       link: 'https://modrinth.com/user/JollyJoe/projects',
