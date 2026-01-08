@@ -12,8 +12,8 @@ function Projects() {
           <img src="https://starcast.ph/android-chrome-512x512.png" className='w-10 h-10' />
         </>
       ),
-      description: 'Proprietary voting platform for StarhorizonTV\'s contests. Features real-time results and an admin panel. Fully integrated with Maya checkout API',
-      tech: ['React', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment'],
+      description: 'Proprietary voting platform for StarhorizonTV\'s contests. Features real-time results and an admin panel. Fully integrated with Paymongo checkout API',
+      tech: ['React', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment', 'API Integration'],
       link: 'https://starcast.ph',
       github: ''
     },
@@ -68,7 +68,7 @@ function Projects() {
           </span>
         </h2>
         <p className="text-gray-400 text-center mb-12">Building innovative solutions with modern technologies</p>
-        
+
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={project.name} project={project} index={index} />
