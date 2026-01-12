@@ -10,7 +10,7 @@ function Projects() {
       name: 'hum (In Development)',
       icon: (
         <>
-          <Music className='w-10 h-10' />
+          <Music className='w-9 h-9 text-rose-700' />
         </>
       ),
       description: 'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with paddle checkouts for payments.',
