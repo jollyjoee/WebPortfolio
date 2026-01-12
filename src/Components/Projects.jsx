@@ -1,10 +1,23 @@
 import ProjectCard from './ProjectCard';
 import useModrinthStats from '../Hooks/useModrinthStats';
+import { Music } from 'lucide-react';
 
 function Projects() {
   const modrinthDownloads = useModrinthStats(); // Custom hook to fetch Modrinth stats
 
   const projects = [
+    {
+      name: 'hum (In Development)',
+      icon: (
+        <>
+          <Music className='w-10 h-10' />
+        </>
+      ),
+      description: 'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with paddle checkouts for payments.',
+      tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment', 'API Integration'],
+      link: 'https://tryhum.cc',
+      github: ''
+    },
     {
       name: 'Starcast',
       icon: (
