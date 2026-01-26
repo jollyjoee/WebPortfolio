@@ -25,7 +25,7 @@ function Projects() {
           <img src="https://starcast.ph/android-chrome-512x512.png" className='w-10 h-10' />
         </>
       ),
-      description: 'Proprietary voting platform for StarhorizonTV\'s contests. Features real-time results and an admin panel. Fully integrated with Paymongo checkout API',
+      description: 'Contest voting platform for various contests. Features real-time results and an admin panel. Fully integrated with Paymongo checkout API',
       tech: ['React', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment', 'API Integration'],
       link: 'https://starcast.ph',
       github: ''
