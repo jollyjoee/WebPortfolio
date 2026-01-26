@@ -7,13 +7,13 @@ function Projects() {
 
   const projects = [
     {
-      name: 'hum (In Development)',
+      name: 'hum',
       icon: (
         <>
-          <Music className='w-9 h-9 text-rose-700' />
+          <img src="https://tryhum.cc/favicon.ico" className='w-10 h-10' />
         </>
       ),
-      description: 'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with paddle checkouts for payments.',
+      description: 'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with Creem.io checkouts for payments.',
       tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare Deployment', 'API Integration'],
       link: 'https://tryhum.cc',
       github: ''
