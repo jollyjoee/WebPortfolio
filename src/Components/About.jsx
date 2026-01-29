@@ -1,121 +1,182 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, Github, MapPin, Copy, Check } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 function SkillBar({ skill, level, index }) {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setWidth(level), index * 100);
-    return () => clearTimeout(timer);
-  }, [level, index]);
-
   return (
-    <div className="mb-6">
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
+      className="mb-5"
+    >
       <div className="flex justify-between mb-2">
-        <span className="text-white font-semibold">{skill}</span>
-        <span className="text-cyan-400">{level}%</span>
+        <span className="text-[--text-primary] font-medium">{skill}</span>
+        <span className="text-[--accent] font-mono text-sm">{level}%</span>
       </div>
-      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${width}%` }}
-        ></div>
+      <div className="h-2 bg-[--bg-tertiary] rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-linear-to-r from-emerald-500 to-emerald-400 rounded-full"
+          initial={{ width: 0 }}
+          whileInView={{ width: `${level}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: index * 0.05, ease: 'easeOut' }}
+        />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function About() {
   const skillsUnsorted = [
-    { name: "React", level: 75 },
-    { name: "Next.js", level: 75 },
-    { name: "JavaScript", level: 75 },
-    { name: "Java", level: 70 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "API Development", level: 70 },
-    { name: "API Integration", level: 80 },
-    { name: "Python", level: 60 },
-    { name: "AutoHotKey", level: 95 },
-    { name: "Lua", level: 75 },
-    { name: "Cloudflare", level: 65 },
+    { name: 'React', level: 75 },
+    { name: 'Next.js', level: 75 },
+    { name: 'JavaScript', level: 75 },
+    { name: 'Java', level: 70 },
+    { name: 'Tailwind CSS', level: 90 },
+    { name: 'API Development', level: 70 },
+    { name: 'API Integration', level: 80 },
+    { name: 'Python', level: 60 },
+    { name: 'AutoHotKey', level: 95 },
+    { name: 'Lua', level: 75 },
+    { name: 'Cloudflare', level: 65 },
   ];
 
   const skills = [...skillsUnsorted].sort((a, b) => b.level - a.level);
 
-  const copyToClipboard = (text, callback) => {
-    navigator.clipboard.writeText(text);
-    callback(true);
-    setTimeout(() => callback(false), 2000);
-  };
-
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
 
-  return (
-    <section id="about" className="min-h-screen py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-16">
-          <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-            About Me
-          </span>
-        </h2>
+  const copyToClipboard = (text, setCopied) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
-        <div className="grid md:grid-cols-2 gap-12">
+  return (
+    <section id="about" className="min-h-screen py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <ScrollReveal variant="fadeUp" className="text-center mb-16">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="inline-block text-sm font-medium text-[--accent] uppercase tracking-widest mb-4"
+          >
+            Get to Know Me
+          </motion.span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="gradient-text">About Me</span>
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Column - Info */}
           <div className="space-y-6">
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-              <h3 className="text-3xl font-bold text-white mb-4">Julijo Pisk Jr.</h3>
-              <div className="space-y-2 mb-6">
-                <p className="text-cyan-400 text-lg">Full Stack Developer</p>
-                <p className="text-blue-400 text-lg">Game Experience Developer</p>
-                <p className="text-purple-400 text-lg">Automation Enthusiast</p>
+            <ScrollReveal variant="slideLeft" delay={0.1}>
+              <div className="card p-8">
+                <h3 className="text-2xl font-bold text-[--text-primary] mb-4">
+                  Julijo Pisk Jr.
+                </h3>
+                <div className="space-y-2 mb-6">
+                  <p className="text-[--accent] font-medium">Full Stack Developer</p>
+                  <p className="text-[--accent-light] font-medium">Game Experience Developer</p>
+                  <p className="text-[--text-secondary] font-medium">Automation Enthusiast</p>
+                </div>
+
+                <p className="text-[--text-secondary] leading-relaxed mb-8">
+                  Passionate developer specializing in building modern web applications, game
+                  scripts, and automation tools. Focused on creating efficient, user-friendly
+                  solutions with clean code and great attention to detail.
+                </p>
+
+                {/* Contact Buttons */}
+                <div className="space-y-3">
+                  <motion.button
+                    onClick={() => copyToClipboard('piskjulijo@gmail.com', setEmailCopied)}
+                    className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl btn-primary font-semibold"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    {emailCopied ? (
+                      <>
+                        <Check className="w-5 h-5" />
+                        Email Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Mail className="w-5 h-5" />
+                        piskjulijo@gmail.com
+                      </>
+                    )}
+                  </motion.button>
+
+                  <motion.button
+                    onClick={() => copyToClipboard('+63 (992) 761-4953', setPhoneCopied)}
+                    className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl btn-outline font-semibold"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    {phoneCopied ? (
+                      <>
+                        <Check className="w-5 h-5" />
+                        Phone Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Phone className="w-5 h-5" />
+                        +63 (992) 761-4953
+                      </>
+                    )}
+                  </motion.button>
+
+                  <motion.a
+                    href="https://github.com/jollyjoee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl border border-[--border-default] text-[--text-primary] font-semibold hover:border-[--accent] hover:bg-[--accent-subtle] transition-all"
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.99 }}
+                  >
+                    <Github className="w-5 h-5" />
+                    GitHub Profile
+                  </motion.a>
+                </div>
               </div>
+            </ScrollReveal>
 
-              <p className="text-gray-300 leading-relaxed mb-6">
-                Passionate developer specializing in building modern web applications, game scripts, and automation tools.
-                Focused on creating efficient, user-friendly solutions with clean code and great attention to detail.
-              </p>
-
-              <div className="space-y-3">
-                <button
-                  onClick={() => copyToClipboard('piskjulijo@gmail.com', setEmailCopied)}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:scale-105 transition-transform"
-                >
-                  {emailCopied ? '✓ Email Copied!' : '📧 piskjulijo@gmail.com'}
-                </button>
-
-                <button
-                  onClick={() => copyToClipboard('+63 (992) 761-4953', setPhoneCopied)}
-                  className="w-full px-6 py-3 border-2 border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-colors"
-                >
-                  {phoneCopied ? '✓ Phone Copied!' : '📱 +63 (992) 761-4953'}
-                </button>
-
-                <a
-                  href="https://github.com/jollyjoee"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full px-6 py-3 border-2 border-gray-600 rounded-lg font-semibold text-center hover:border-cyan-500 hover:bg-cyan-500/10 transition-all"
-                >
-                  🔗 GitHub Profile
-                </a>
+            {/* Location Card */}
+            <ScrollReveal variant="slideLeft" delay={0.2}>
+              <div className="card p-6 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[--accent-subtle] flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-[--accent]" />
+                </div>
+                <div>
+                  <p className="text-[--text-muted] text-sm mb-1">Location</p>
+                  <p className="text-[--text-primary] font-medium">
+                    Lumil, Silang, Cavite, Philippines
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700">
-              <p className="text-gray-400 text-sm mb-2">📍 Location</p>
-              <p className="text-white">Lumil, Silang, Cavite, Philippines</p>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Right Column - Skills */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-8">Technical Skills</h3>
-            <div>
-              {skills.map((skill, index) => (
-                <SkillBar key={skill.name} skill={skill.name} level={skill.level} index={index} />
-              ))}
+          <ScrollReveal variant="slideRight" delay={0.2}>
+            <div className="card p-8 h-full">
+              <h3 className="text-xl font-bold text-[--text-primary] mb-8 flex items-center gap-3">
+                <span className="w-8 h-1 bg-[--accent] rounded-full" />
+                Technical Skills
+              </h3>
+              <div>
+                {skills.map((skill, index) => (
+                  <SkillBar key={skill.name} skill={skill.name} level={skill.level} index={index} />
+                ))}
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
