@@ -30,6 +30,17 @@ function Projects() {
       github: '',
     },
     {
+      name: 'SHMusic',
+      icon: (
+        <img src="https://shmusic.jpisk.site/favicon.ico" className="w-8 h-8 rounded" alt="SHMusic" />
+      ),
+      description:
+        'A brick-and-mortar business website with a modern design and a focus on user experience. Features a responsive layout and a clean interface.',
+      tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare', 'API Integration'],
+      link: 'https://shmusic.jpisk.site',
+      github: '',
+    },
+    {
       name: 'Ulticlick',
       description: 'Java automation software with Cloudflare worker authentication via D1 SQL Storage.',
       tech: ['Java', 'JavaScript', 'AutoHotKey', 'Cloudflare'],
