@@ -8,17 +8,6 @@ function Projects() {
 
   const projects = [
     {
-      name: 'hum',
-      icon: (
-        <img src="https://tryhum.cc/favicon.ico" className="w-8 h-8 rounded" alt="hum" />
-      ),
-      description:
-        'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with Creem.io checkouts for payments.',
-      tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare', 'API Integration'],
-      link: 'https://tryhum.cc',
-      github: '',
-    },
-    {
       name: 'Starcast',
       icon: (
         <img src="https://starcast.ph/android-chrome-512x512.png" className="w-8 h-8 rounded" alt="Starcast" />
@@ -30,13 +19,24 @@ function Projects() {
       github: '',
     },
     {
+      name: 'hum',
+      icon: (
+        <img src="https://tryhum.cc/favicon.ico" className="w-8 h-8 rounded" alt="hum" />
+      ),
+      description:
+        'An AI powered lyric and music generator, powered by dual AI-model technology. Fully integrated with Creem.io checkouts for payments.',
+      tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare', 'API Integration'],
+      link: 'https://tryhum.cc',
+      github: '',
+    },
+    {
       name: 'SHMusic',
       icon: (
         <img src="https://shmusic.jpisk.site/favicon.ico" className="w-8 h-8 rounded" alt="SHMusic" />
       ),
       description:
         'A brick-and-mortar business website with a modern design and a focus on user experience. Features a responsive layout and a clean interface.',
-      tech: ['Next.js', 'JavaScript', 'TailwindCSS', 'Cloudflare', 'API Integration'],
+      tech: ['React', 'JavaScript', 'TailwindCSS', 'Cloudflare'],
       link: 'https://shmusic.jpisk.site',
       github: '',
     },
